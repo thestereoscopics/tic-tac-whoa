@@ -9,7 +9,7 @@ export default function Moves({movesOrder, updateMoveNumber}) {
         for (let i = 1; i < howManyMoves + 1; i++) {
             for (let j = 0; j < Object.keys(movesOrder[i]).length; j++) {
                 let thisKey = Object.keys(movesOrder[i])[0]
-                if (movesOrder[i][thisKey] !== null) { 
+                if (movesOrder[i][thisKey] !== null) {
                     newMovesList.push(<li movenum={i} key={`move-${i}`} onClick={handleClick}>Return to move {i} for {movesOrder[i][thisKey]}</li>)
                 }
             }
@@ -22,7 +22,7 @@ export default function Moves({movesOrder, updateMoveNumber}) {
         updateMoveNumber(moveNumber)
         movesHTML(moveNumber)
     }
-    
+
     useEffect(() => {
         movesHTML()
      },[movesOrder])
